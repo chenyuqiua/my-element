@@ -1,5 +1,5 @@
 <template>
-  <div :class="['yq-col', ` yq-col-${span}`]" :style="style">
+  <div :class="['yq-col', colKls]" :style="style">
     <slot></slot>
   </div>
 </template>
@@ -8,6 +8,7 @@
 import { computed, inject } from "vue";
 import { colProps } from "./col";
 import { rowContextKey } from "packages/components/row/src/constants";
+import { isNumber } from "packages/utils/types.js";
 
 defineOptions({
   name: "YqCol",
@@ -23,6 +24,21 @@ const style = computed(() => {
   }
   return styles;
 });
+
+const colKls = computed(() => {
+  const classes = [];
+  const pos = ["span", "offset", "push", "pull"];
+
+  pos.forEach((prop) => {
+    const size = props[prop];
+    if (isNumber(size)) {
+      if (prop === "span") classes.push(`yq-col-${props[prop]}`);
+      else if (size > 0) classes.push(`yq-col-${prop}-${props[prop]}`);
+    }
+  });
+
+  return classes;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +50,17 @@ const style = computed(() => {
 @for $i from 0 through 24 {
   .yq-col-#{$i} {
     width: $i / 24 * 100%;
+  }
+  .yq-col-offset-#{$i} {
+    margin-left: $i / 24 * 100%;
+  }
+  .yq-col-push-#{$i} {
+    position: relative;
+    left: $i / 24 * 100%;
+  }
+  .yq-col-pull-#{$i} {
+    position: relative;
+    right: $i / 24 * 100%;
   }
 }
 </style>

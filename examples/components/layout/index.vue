@@ -52,6 +52,34 @@
       <yq-col :span="16"><div class="grid-content ep-bg-purple" /></yq-col>
       <yq-col :span="4"><div class="grid-content ep-bg-purple" /></yq-col>
     </yq-row>
+    <h2>分栏偏移</h2>
+    <yq-row :gutter="20">
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+      <yq-col :span="6" :offset="6">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+    </yq-row>
+    <yq-row :gutter="20">
+      <yq-col :span="6" :offset="6">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+      <yq-col :span="6" :offset="6">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+    </yq-row>
+    <yq-row :gutter="20">
+      <yq-col :span="12" :offset="6">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+    </yq-row>
+    <yq-row :gutter="20">
+      <yq-col :span="6" :push="12">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+      <yq-col :span="6" :pull="3">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+    </yq-row>
   </div>
 </template>
 
