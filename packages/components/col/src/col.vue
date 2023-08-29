@@ -49,7 +49,8 @@ const colKls = computed(() => {
 
 @for $i from 0 through 24 {
   .yq-col-#{$i} {
-    width: $i / 24 * 100%;
+    max-width: $i / 24 * 100%;
+    flex: 0 0 $i / 24 * 100%;
   }
   .yq-col-offset-#{$i} {
     margin-left: $i / 24 * 100%;

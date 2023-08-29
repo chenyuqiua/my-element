@@ -32,14 +32,8 @@ provide(rowContextKey, {
 
 <style lang="scss" scoped>
 .yq-row {
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-  }
-
-  &::after {
-    clear: both;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 </style>
