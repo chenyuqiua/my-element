@@ -4,10 +4,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed, provide } from "vue";
 import { rowContextKey } from "./constants";
 import { rowProps } from "./row";
+import type { CSSProperties } from "vue";
 
 defineOptions({
   name: "YqRow",
@@ -17,16 +18,16 @@ const props = defineProps(rowProps);
 
 const gutter = computed(() => props.gutter);
 
+provide(rowContextKey, {
+  gutter,
+});
+
 const style = computed(() => {
-  const styles = {};
+  const styles: CSSProperties = {};
   if (props.gutter) {
     styles.marginLeft = styles.marginRight = `-${props.gutter / 2}px`;
   }
   return styles;
-});
-
-provide(rowContextKey, {
-  gutter,
 });
 </script>
 

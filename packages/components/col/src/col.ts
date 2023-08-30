@@ -14,5 +14,5 @@ export const colProps = {
   pull: {
     type: Number,
     default: 0,
-  }
-}
+  },
+} as const;

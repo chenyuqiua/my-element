@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<script setup>
-import layout from "@/components/layout";
+<script setup lang="ts">
+import layout from "@/components/layout/index.vue";
 </script>
 
 <style lang="scss" scoped></style>

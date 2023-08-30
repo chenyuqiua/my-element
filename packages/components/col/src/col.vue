@@ -4,11 +4,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed, inject } from "vue";
 import { colProps } from "./col";
 import { rowContextKey } from "packages/components/row/src/constants";
-import { isNumber } from "packages/utils/types.js";
+import { isNumber } from "packages/utils/types";
+import type { CSSProperties } from "vue";
 
 defineOptions({
   name: "YqCol",
@@ -18,7 +19,7 @@ const props = defineProps(colProps);
 const { gutter } = inject(rowContextKey, { gutter: computed(() => 0) });
 
 const style = computed(() => {
-  const styles = {};
+  const styles: CSSProperties = {};
   if (gutter.value) {
     styles.paddingLeft = styles.paddingRight = `${gutter.value / 2}px`;
   }
@@ -26,8 +27,8 @@ const style = computed(() => {
 });
 
 const colKls = computed(() => {
-  const classes = [];
-  const pos = ["span", "offset", "push", "pull"];
+  const classes: string[] = [];
+  const pos = ["span", "offset", "push", "pull"] as const;
 
   pos.forEach((prop) => {
     const size = props[prop];

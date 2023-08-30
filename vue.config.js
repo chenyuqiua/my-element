@@ -4,7 +4,7 @@ const path = require('path')
 module.exports = {
   pages: {
     index: {
-      entry: 'examples/main.js',
+      entry: 'examples/main.ts',
       template: 'public/index.html',
       filename: 'index.html'
     }
@@ -13,6 +13,9 @@ module.exports = {
     config.resolve.alias
       .set('@', path.resolve('examples'))
       .set('packages', path.resolve('packages'))
+
+    config.resolve.extensions
+      .merge(['.ts', '.js', '.vue', '.json'])
 
     config.module
       .rule('js')
