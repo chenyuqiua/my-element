@@ -1,5 +1,13 @@
 <template>
-  <div class="yq-row" :gutter="gutter" :style="style">
+  <div
+    :class="[
+      'yq-row',
+      justify !== 'start' && `is-justify-${justify}`,
+      !!align && `is-align-${align}`,
+    ]"
+    :gutter="gutter"
+    :style="style"
+  >
     <slot></slot>
   </div>
 </template>
@@ -36,5 +44,30 @@ const style = computed(() => {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
+}
+
+.is-justify-center {
+  justify-content: center;
+}
+.is-justify-end {
+  justify-content: end;
+}
+.is-justify-space-between {
+  justify-content: space-between;
+}
+.is-justify-space-around {
+  justify-content: space-around;
+}
+.is-justify-space-evenly {
+  justify-content: space-evenly;
+}
+.is-align-top {
+  align-items: flex-start;
+}
+.is-align-middle {
+  align-items: center;
+}
+.is-align-bottom {
+  align-items: flex-end;
 }
 </style>

@@ -80,6 +80,37 @@
         <div class="grid-content ep-bg-purple" />
       </yq-col>
     </yq-row>
+    <h2>对齐方式</h2>
+    <yq-row class="row-bg">
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple-light" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+    </yq-row>
+    <yq-row class="row-bg" justify="center">
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple-light" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+    </yq-row>
+    <yq-row class="row-bg" justify="end">
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple-light" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+    </yq-row>
+    <yq-row class="row-bg" justify="space-between">
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple-light" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+    </yq-row>
+    <yq-row class="row-bg" justify="space-around">
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple-light" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+    </yq-row>
+    <yq-row class="row-bg" justify="space-evenly">
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple-light" /></yq-col>
+      <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
+    </yq-row>
   </div>
 </template>
 
