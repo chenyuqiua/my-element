@@ -111,6 +111,21 @@
       <yq-col :span="6"><div class="grid-content ep-bg-purple-light" /></yq-col>
       <yq-col :span="6"><div class="grid-content ep-bg-purple" /></yq-col>
     </yq-row>
+    <h2>响应式布局</h2>
+    <yq-row :gutter="10">
+      <yq-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+      <yq-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+        <div class="grid-content ep-bg-purple-light" />
+      </yq-col>
+      <yq-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+      <yq-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+        <div class="grid-content ep-bg-purple-light" />
+      </yq-col>
+    </yq-row>
   </div>
 </template>
 

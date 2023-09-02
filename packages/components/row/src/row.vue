@@ -40,7 +40,9 @@ const style = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-.yq-row {
+@use "packages/theme-chalk/src/mixins/config.scss" as *;
+
+.#{$namespace}-row {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;

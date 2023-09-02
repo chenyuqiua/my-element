@@ -28,8 +28,8 @@ const style = computed(() => {
 
 const colKls = computed(() => {
   const classes: string[] = [];
-  const pos = ["span", "offset", "push", "pull"] as const;
 
+  const pos = ["span", "offset", "push", "pull"] as const;
   pos.forEach((prop) => {
     const size = props[prop];
     if (isNumber(size)) {
@@ -38,31 +38,67 @@ const colKls = computed(() => {
     }
   });
 
+  const sizes = ["xs", "sm", "md", "lg", "xl"] as const;
+  sizes.forEach((size) => {
+    if (isNumber(props[size])) classes.push(`yq-col-${size}-${props[size]}`);
+    else {
+      Object.entries(size).forEach(([prop, sizeProp]) => {
+        classes.push(
+          prop === "span"
+            ? `yq-col-${size}-${sizeProp}`
+            : `yq-col-${size}-${prop}-${sizeProp}`
+        );
+      });
+    }
+  });
+
   return classes;
 });
 </script>
 
 <style lang="scss" scoped>
-.yq-col {
+@use "packages/theme-chalk/src/mixins/_col.scss" as *;
+@use "packages/theme-chalk/src/mixins/config.scss" as *;
+@use "packages/theme-chalk/src/mixins/mixins.scss" as *;
+
+.#{$namespace}-col {
   float: left;
   box-sizing: border-box;
 }
 
+/* .#{$namespace}-col-0 {
+  display: none;
+  // to avoid introducing !important syntax, redundant css rule is required due to selector priority.
+  @include when(guttered) {
+    display: none;
+  }
+} */
+
 @for $i from 0 through 24 {
-  .yq-col-#{$i} {
+  .#{$namespace}-col-#{$i} {
     max-width: $i / 24 * 100%;
     flex: 0 0 $i / 24 * 100%;
   }
-  .yq-col-offset-#{$i} {
+  .#{$namespace}-col-offset-#{$i} {
     margin-left: $i / 24 * 100%;
   }
-  .yq-col-push-#{$i} {
+  .#{$namespace}-col-push-#{$i} {
     position: relative;
     left: $i / 24 * 100%;
   }
-  .yq-col-pull-#{$i} {
+  .#{$namespace}-col-pull-#{$i} {
     position: relative;
     right: $i / 24 * 100%;
   }
 }
+
+@include col-size(xs);
+
+@include col-size(sm);
+
+@include col-size(md);
+
+@include col-size(lg);
+
+@include col-size(xl);
 </style>

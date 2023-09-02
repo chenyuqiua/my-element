@@ -1,0 +1,22 @@
+@use "../common/var.scss" as *;
+@use "./config.scss" as *;
+
+// 在不同尺寸屏幕下添加样式
+@mixin res($key, $map: $breakpoints) {
+  // 循环遍历map中是否包含传入的key
+  @if map-has-key($map, $key) {
+    @media only screen and #{unquote(map-get($map, $key))} {
+      @content;
+    }
+  } @else {
+    @warn "Undefined points: `#{$map}`";
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
