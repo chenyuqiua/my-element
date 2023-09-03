@@ -40,7 +40,7 @@ const style = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "packages/theme-chalk/src/mixins/config.scss" as *;
+@use "theme-chalk/mixins/config" as *;
 
 .#{$namespace}-row {
   display: flex;
