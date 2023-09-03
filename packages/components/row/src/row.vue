@@ -1,5 +1,6 @@
 <template>
-  <div
+  <component
+    :is="tag"
     :class="[
       'yq-row',
       justify !== 'start' && `is-justify-${justify}`,
@@ -9,7 +10,7 @@
     :style="style"
   >
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <script setup lang="ts">

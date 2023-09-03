@@ -162,6 +162,12 @@
         <div class="grid-content ep-bg-purple-light">11</div>
       </yq-col>
     </yq-row>
+    <h2>自定义元素标签</h2>
+    <yq-row :gutter="10" tag="h3">
+      <yq-col :span="6" tag="h4">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+    </yq-row>
   </div>
 </template>
 

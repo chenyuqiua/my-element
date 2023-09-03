@@ -1,7 +1,7 @@
 <template>
-  <div :class="['yq-col', colKls]" :style="style">
+  <component :is="tag" :class="['yq-col', colKls]" :style="style">
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <script setup lang="ts">
