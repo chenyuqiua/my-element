@@ -15,8 +15,7 @@
     "types": ["webpack-env", "jest"],
     "paths": {
       "@/*": ["examples/*"],
-      "packages/*": ["packages/*"],
-      "theme-chalk/*": ["packages/theme-chalk/src/*"]
+      "packages/*": ["packages/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },

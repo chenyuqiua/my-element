@@ -57,9 +57,9 @@ const colKls = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "theme-chalk/mixins/_col" as *;
-@use "theme-chalk/mixins/config" as *;
-@use "theme-chalk/mixins/mixins" as *;
+@use "packages/theme-chalk/src/mixins/_col" as *;
+@use "packages/theme-chalk/src/mixins/config" as *;
+@use "packages/theme-chalk/src/mixins/mixins" as *;
 
 .#{$namespace}-col {
   float: left;

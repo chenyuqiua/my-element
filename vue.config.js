@@ -13,7 +13,6 @@ module.exports = {
     config.resolve.alias
       .set('@', path.resolve('examples'))
       .set('packages', path.resolve('packages'))
-      .set('theme-chalk', path.resolve('packages/theme-chalk/src'))
 
     config.resolve.extensions
       .merge(['.ts', '.js', '.vue', '.json'])
