@@ -1,10 +1,7 @@
-import { App } from "vue";
-import YqRow from "./src/col.vue";
+import Col from "./src/col.vue";
+import { withInstall } from "packages/utils";
 
-YqRow.install = (Vue: App) => {
-  Vue.component(YqRow.name, YqRow);
-};
-
-export default YqRow;
+export const YqCol = withInstall(Col);
+export default YqCol;
 
 export * from "./src/col";

@@ -8,7 +8,7 @@
 import { computed, inject } from "vue";
 import { colProps } from "./col";
 import { rowContextKey } from "packages/components/row/src/constants";
-import { isNumber } from "packages/utils/types";
+import { isNumber, isObject } from "packages/utils";
 import type { CSSProperties } from "vue";
 
 defineOptions({
@@ -41,7 +41,7 @@ const colKls = computed(() => {
   const sizes = ["xs", "sm", "md", "lg", "xl"] as const;
   sizes.forEach((size) => {
     if (isNumber(props[size])) classes.push(`yq-col-${size}-${props[size]}`);
-    else {
+    else if (isObject(props[size])) {
       Object.entries(size).forEach(([prop, sizeProp]) => {
         classes.push(
           prop === "span"
