@@ -43,7 +43,7 @@ const colKls = computed(() => {
   sizes.forEach((size) => {
     if (isNumber(props[size])) classes.push(`yq-col-${size}-${props[size]}`);
     else if (isObject(props[size])) {
-      Object.entries(size).forEach(([prop, sizeProp]) => {
+      Object.entries(props[size]).forEach(([prop, sizeProp]) => {
         classes.push(
           prop === "span"
             ? `yq-col-${size}-${sizeProp}`
