@@ -26,6 +26,10 @@ export const rowProps = {
     type: String,
     values: RowAlign,
   },
+  tag: {
+    type: String,
+    default: "div",
+  },
 } as const;
 
 export type RowProps = ExtractPropTypes<typeof rowProps>;

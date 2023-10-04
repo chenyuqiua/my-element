@@ -1,5 +1,6 @@
 <template>
-  <div
+  <component
+    :is="tag"
     :class="[
       'yq-row',
       justify !== 'start' && `is-justify-${justify}`,
@@ -9,7 +10,7 @@
     :style="style"
   >
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <script setup lang="ts">
@@ -40,7 +41,7 @@ const style = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "packages/theme-chalk/src/mixins/config.scss" as *;
+@use "packages/theme-chalk/src/mixins/config" as *;
 
 .#{$namespace}-row {
   display: flex;

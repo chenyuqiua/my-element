@@ -126,6 +126,48 @@
         <div class="grid-content ep-bg-purple-light" />
       </yq-col>
     </yq-row>
+    <h2>基于断点的隐藏类</h2>
+    <yq-row class="row-bg">
+      <yq-col class="hidden-xs-only" :span="6">
+        <div class="grid-content ep-bg-purple">1</div>
+      </yq-col>
+      <yq-col class="hidden-sm-only" :span="6">
+        <div class="grid-content ep-bg-purple-light">2</div>
+      </yq-col>
+      <yq-col class="hidden-sm-and-down" :span="6">
+        <div class="grid-content ep-bg-purple">3</div>
+      </yq-col>
+      <yq-col class="hidden-sm-and-up" :span="6">
+        <div class="grid-content ep-bg-purple-light">4</div>
+      </yq-col>
+      <yq-col class="hidden-md-only" :span="6">
+        <div class="grid-content ep-bg-purple">5</div>
+      </yq-col>
+      <yq-col class="hidden-md-and-down" :span="6">
+        <div class="grid-content ep-bg-purple-light">6</div>
+      </yq-col>
+      <yq-col class="hidden-md-aand-up" :span="6">
+        <div class="grid-content ep-bg-purple-light">7</div>
+      </yq-col>
+      <yq-col class="hidden-lg-only" :span="6">
+        <div class="grid-content ep-bg-purple-light">8</div>
+      </yq-col>
+      <yq-col class="hidden-lg-and-down" :span="6">
+        <div class="grid-content ep-bg-purple-light">9</div>
+      </yq-col>
+      <yq-col class="hidden-lg-and-up" :span="6">
+        <div class="grid-content ep-bg-purple-light">10</div>
+      </yq-col>
+      <yq-col class="hidden-xl-only" :span="6">
+        <div class="grid-content ep-bg-purple-light">11</div>
+      </yq-col>
+    </yq-row>
+    <h2>自定义元素标签</h2>
+    <yq-row :gutter="10" tag="h3">
+      <yq-col :span="6" tag="h4">
+        <div class="grid-content ep-bg-purple" />
+      </yq-col>
+    </yq-row>
   </div>
 </template>
 

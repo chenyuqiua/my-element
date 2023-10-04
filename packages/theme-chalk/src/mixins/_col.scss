@@ -1,5 +1,5 @@
-@use "./mixins" as *;
-@use "./config.scss" as *;
+@use "mixins" as *;
+@use "config" as *;
 
 // 响应式布局样式添加
 @mixin col-size($size) {

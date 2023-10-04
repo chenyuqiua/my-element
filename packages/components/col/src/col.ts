@@ -46,4 +46,8 @@ export const colProps = {
     type: definePropType<ColSize>([Number, Object]),
     default: () => mutable({} as const),
   },
+  tag: {
+    type: String,
+    default: "div",
+  },
 } as const;

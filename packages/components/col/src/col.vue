@@ -1,14 +1,14 @@
 <template>
-  <div :class="['yq-col', colKls]" :style="style">
+  <component :is="tag" :class="['yq-col', colKls]" :style="style">
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <script setup lang="ts">
 import { computed, inject } from "vue";
 import { colProps } from "./col";
 import { rowContextKey } from "packages/components/row/src/constants";
-import { isNumber } from "packages/utils/types";
+import { isNumber, isObject } from "packages/utils";
 import type { CSSProperties } from "vue";
 
 defineOptions({
@@ -41,7 +41,7 @@ const colKls = computed(() => {
   const sizes = ["xs", "sm", "md", "lg", "xl"] as const;
   sizes.forEach((size) => {
     if (isNumber(props[size])) classes.push(`yq-col-${size}-${props[size]}`);
-    else {
+    else if (isObject(props[size])) {
       Object.entries(size).forEach(([prop, sizeProp]) => {
         classes.push(
           prop === "span"
@@ -57,9 +57,9 @@ const colKls = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "packages/theme-chalk/src/mixins/_col.scss" as *;
-@use "packages/theme-chalk/src/mixins/config.scss" as *;
-@use "packages/theme-chalk/src/mixins/mixins.scss" as *;
+@use "packages/theme-chalk/src/mixins/_col" as *;
+@use "packages/theme-chalk/src/mixins/config" as *;
+@use "packages/theme-chalk/src/mixins/mixins" as *;
 
 .#{$namespace}-col {
   float: left;

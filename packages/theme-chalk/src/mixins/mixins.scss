@@ -1,5 +1,5 @@
-@use "../common/var.scss" as *;
-@use "./config.scss" as *;
+@use "../common/var" as *;
+@use "config" as *;
 
 // 在不同尺寸屏幕下添加样式
 @mixin res($key, $map: $breakpoints) {
