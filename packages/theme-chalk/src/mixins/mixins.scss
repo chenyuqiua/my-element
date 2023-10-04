@@ -1,6 +1,15 @@
 @use "../common/var" as *;
 @use "config" as *;
 
+// BEM
+@mixin b($block) {
+  $B: $namespace + $common-separator + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
 // 在不同尺寸屏幕下添加样式
 @mixin res($key, $map: $breakpoints) {
   // 循环遍历map中是否包含传入的key

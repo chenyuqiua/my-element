@@ -18,6 +18,7 @@ import { computed, provide } from "vue";
 import { rowContextKey } from "./constants";
 import { rowProps } from "./row";
 import type { CSSProperties } from "vue";
+import "../style";
 
 defineOptions({
   name: "YqRow",
@@ -39,38 +40,3 @@ const style = computed(() => {
   return styles;
 });
 </script>
-
-<style lang="scss" scoped>
-@use "packages/theme-chalk/src/mixins/config" as *;
-
-.#{$namespace}-row {
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-
-.is-justify-center {
-  justify-content: center;
-}
-.is-justify-end {
-  justify-content: end;
-}
-.is-justify-space-between {
-  justify-content: space-between;
-}
-.is-justify-space-around {
-  justify-content: space-around;
-}
-.is-justify-space-evenly {
-  justify-content: space-evenly;
-}
-.is-align-top {
-  align-items: flex-start;
-}
-.is-align-middle {
-  align-items: center;
-}
-.is-align-bottom {
-  align-items: flex-end;
-}
-</style>

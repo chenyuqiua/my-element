@@ -1,0 +1,40 @@
+@use "mixins/_col" as *;
+@use "mixins/config" as *;
+@use "mixins/mixins" as *;
+
+@include b(col) {
+  float: left;
+  box-sizing: border-box;
+}
+
+.#{$namespace}-col-0 {
+  display: none;
+}
+
+@for $i from 0 through 24 {
+  .#{$namespace}-col-#{$i} {
+    max-width: $i / 24 * 100%;
+    flex: 0 0 $i / 24 * 100%;
+  }
+  .#{$namespace}-col-offset-#{$i} {
+    margin-left: $i / 24 * 100%;
+  }
+  .#{$namespace}-col-push-#{$i} {
+    position: relative;
+    left: $i / 24 * 100%;
+  }
+  .#{$namespace}-col-pull-#{$i} {
+    position: relative;
+    right: $i / 24 * 100%;
+  }
+}
+
+@include col-size(xs);
+
+@include col-size(sm);
+
+@include col-size(md);
+
+@include col-size(lg);
+
+@include col-size(xl);
