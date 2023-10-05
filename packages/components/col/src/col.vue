@@ -10,7 +10,7 @@ import { colProps } from "./col";
 import { rowContextKey } from "packages/components/row/src/constants";
 import { isNumber, isObject } from "packages/utils";
 import type { CSSProperties } from "vue";
-import "../style";
+// import "../style";
 
 defineOptions({
   name: "YqCol",

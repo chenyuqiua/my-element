@@ -18,7 +18,7 @@ import { computed, provide } from "vue";
 import { rowContextKey } from "./constants";
 import { rowProps } from "./row";
 import type { CSSProperties } from "vue";
-import "../style";
+// import "../style";
 
 defineOptions({
   name: "YqRow",

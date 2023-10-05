@@ -1,0 +1,7 @@
+@use "./mixins//mixins.scss" as *;
+
+@include b(header) {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
