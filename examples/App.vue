@@ -1,13 +1,15 @@
 <template>
   <div class="app">
-    <!-- <layout /> -->
-    <container />
+    <!-- <Layout /> -->
+    <!-- <Container /> -->
+    <Icon />
   </div>
 </template>
 
 <script setup lang="ts">
-import layout from "@/components/layout/index.vue";
-import container from "@/components/container/index.vue";
+import Layout from "@/components/layout/index.vue";
+import Container from "@/components/container/index.vue";
+import Icon from "@/components/icon/index.vue";
 </script>
 
 <style lang="scss" scoped></style>

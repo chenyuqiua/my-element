@@ -45,6 +45,7 @@ $box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !de
 $box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 
 // Typography
+$font-path: "fonts"; // 字体路径
 $font-size-extra-large: 20px !default; // 主标题
 $font-size-large: 18px !default; // 标题
 $font-size-medium: 16px !default; // 小标题
